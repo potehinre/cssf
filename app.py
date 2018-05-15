@@ -12,9 +12,8 @@ app = Flask(__name__)
 @app.route('/new_citizen/', methods=["GET", "POST"])
 def new_citizen():
 	resp = requests.get(config.ENDPOINT + "ecosystemslist")
-	ecosystems_list = resp.json()['list']
 	form = forms.NewCitizenForm(request.form)
-	form.financial_institution.choices = [(el["id"], el["name"]) for el in ecosystems_list if el["id"] != u"1"]
+	form.financial_institution.choices = [(u'1', 'platform ecosystem')]
 	if request.method == 'POST' and form.validate():
 		data = {}
 		data["ecosystem_id"] = int(request.form["financial_institution"])
