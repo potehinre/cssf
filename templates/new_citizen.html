@@ -1,0 +1,8 @@
+<form method="POST" action="/new_citizen/">
+    <div>{{ form.first_name.label }}: {{ form.first_name() }}</div>
+    <div>{{ form.last_name.label }}: {{ form.last_name() }}</div>
+    <div>{{ form.citizenship.label }}: {{ form.citizenship() }}</div>
+    <div>{{ form.wallet_address.label }}: {{ form.wallet_address() }}</div>
+    <div>{{ form.financial_institution.label }}: {{ form.financial_institution() }}</div>
+    <input type="submit" value="Register">
+</form>
