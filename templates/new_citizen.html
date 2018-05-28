@@ -1,8 +1,64 @@
-<form method="POST" action="/new_citizen/">
-    <div>{{ form.first_name.label }}: {{ form.first_name() }}</div>
-    <div>{{ form.last_name.label }}: {{ form.last_name() }}</div>
-    <div>{{ form.citizenship.label }}: {{ form.citizenship() }}</div>
-    <div>{{ form.wallet_address.label }}: {{ form.wallet_address() }}</div>
-    <div>{{ form.financial_institution.label }}: {{ form.financial_institution() }}</div>
-    <input type="submit" value="Register">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/static/style.css">
+	<title>Apla Member Registration</title>
+</head>
+<body>
+	<div class="content-wrapper">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form class="v-center" method="POST" action="/new_citizen/">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Apla Member Registration
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+                                {{ form.first_name.label }}
+								{{ form.first_name(class_="form-control") }}
+                            </div>
+							<div class="form-group">
+                                {{ form.last_name.label }}
+								{{ form.last_name(class_="form-control") }}
+                            </div>
+							<div class="form-group">
+                                {{ form.citizenship.label }}
+								{{ form.citizenship(class_="form-control") }}
+                            </div>
+							<div class="form-group">
+                                {{ form.residence_address.label }}
+								{{ form.residence_address(class_="form-control") }}
+                            </div>
+							<div class="form-group">
+                                {{ form.wallet_address.label }}
+								{{ form.wallet_address(class_="form-control") }}
+                            </div>
+							<div class="form-group">
+                                {{ form.financial_institution.label }}
+								{{ form.financial_institution(class_="form-control") }}
+                            </div>
+						</div>
+						<div class="panel-footer">
+							<div class="clearfix">
+								<button class="btn btn-primary pull-right">
+									Send to Selected Financial Institution
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</body>
+</html>
